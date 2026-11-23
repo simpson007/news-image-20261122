@@ -156,7 +156,7 @@ def build():
     y += 14
 
     # ---- Markets strip --------------------------------------------------
-    band_h = 100
+    band_h = 96
     draw.rectangle([MARGIN, y, W - MARGIN, y + band_h], fill=NAVY)
     tf = font(SANS_BOLD, 26)
     draw.text((MARGIN + 18, y + 8), "MARKETS IN FREEFALL",
@@ -168,7 +168,7 @@ def build():
     draw.text((MARGIN + 18, y + 72),
               "Friday's AI sell-off wiped $1.3 trillion off U.S. stocks.",
               font=sf, fill=(220, 226, 235))
-    y += band_h + 14
+    y += band_h + 10
 
     # ---- Bottom cards ---------------------------------------------------
     card_w = 226
@@ -182,17 +182,17 @@ def build():
     for i, (kicker, headline) in enumerate(cards):
         x = MARGIN + i * (card_w + gap)
         hrule(draw, x, x + card_w, y, width=3, fill=RED)
-        yy = y + 10
+        yy = y + 8
         kf = font(SANS_BOLD, 18)
         draw.text((x, yy), kicker, font=kf, fill=RED)
-        yy += 27
-        hf = font(SERIF_BOLD, 21)
+        yy += 25
+        hf = font(SERIF_BOLD, 19)
         draw_lines(draw, x, yy, wrap(draw, headline, hf, card_w),
-                   hf, INK, 26)
+                   hf, INK, 23)
 
     # ---- Footer ---------------------------------------------------------
-    fy = H - 32
-    hrule(draw, MARGIN, W - MARGIN, fy - 12, width=1, fill=RULE)
+    fy = H - 22
+    hrule(draw, MARGIN, W - MARGIN, fy - 10, width=1, fill=RULE)
     ff = font(SANS, 19)
     foot = "All stories first reported on Sunday 22 November 2026"
     fw = draw.textlength(foot, font=ff)
